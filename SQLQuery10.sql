@@ -1,0 +1,12 @@
+create table costumer(id int primary key,name varchar(20),address varchar (20));
+insert into costumer values(201,'raj','surat');
+insert into costumer values(202,'ravi','mumbai');
+insert into costumer values(203,'suraj','surat');
+insert into costumer values(204,'mohit','nagpur');
+insert into costumer values(205,'shubham','surat');
+insert into costumer values(206,'ritesh','banglore');
+insert into costumer values(207,'mayur','delhi');
+insert into costumer values(208,'vivek','surat');
+insert into costumer values(209,'amit','surat');
+insert into costumer values(210,'raj','surat');
+select * from costumer;
