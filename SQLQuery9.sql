@@ -1,13 +1,15 @@
-create table student(rno int primary key,name varchar(20),address varchar(30), mobileno int );
-insert into student values(1,'amit','house 1 nagpur',75898);
-insert into student values(2,'rajesh','nagpur',987654);
-insert into student values(3,'rahul','haydrabad',8759);
-insert into student values(4,'ketan','pune',72325);
-insert into student values(5,'ramesh','mumbai',72325);
-insert into student values(6,'suresh','katol',75898);
-insert into student values(7,'prakash','surat',987654);
-insert into student values(8,'payal','delhi',875956486);
-insert into student values(9,'ritesh','kolkata',72325);
-insert into student values(10,'ashu','pune',7232526589);
-insert into student values(11,'ashu','pune',723252658);
-select * from student;
+
+drop table products3
+CREATE TABLE products3(
+    product_id INT IDENTITY PRIMARY KEY,
+    product_name VARCHAR(255) NOT NULL,
+    unit_price DEC(10,2) NOT NULL
+);
+alter table products3
+add constraint positive_price check (unit_price>0);
+insert into products3 values('mouse',2)
+insert into products3 values('mouse',25)
+select * from products3
+alter table products3
+drop constraint positive_price;
+insert into products3 values('mouse',0)
