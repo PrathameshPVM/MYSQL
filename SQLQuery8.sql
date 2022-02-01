@@ -1,9 +1,12 @@
-use mkp2
-create table product(id int primary key,name varchar(20),price int,quantity int)
-insert into product values(1,'Monitor',5000,2)
-insert into product values(2,'CPU',10000,1)
-insert into product values(3,'KeyBoard',600,1)
-insert into product values(4,'Mouse',600,1)
-insert into product values(5,'RAM',600,1)
-select * from product
 
+drop table products3
+CREATE TABLE products3(
+    product_id INT IDENTITY PRIMARY KEY,
+    product_name VARCHAR(255) NOT NULL,
+    unit_price DEC(10,2) NOT NULL
+);
+alter table products3
+add constraint positive_price check (unit_price>0);
+insert into products3 values('mouse',2)
+insert into products3 values('mouse',25)
+select * from products3
