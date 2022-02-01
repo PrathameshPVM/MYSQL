@@ -1,12 +1,15 @@
-create table costumer(id int primary key,name varchar(20),address varchar (20));
-insert into costumer values(201,'raj','surat');
-insert into costumer values(202,'ravi','mumbai');
-insert into costumer values(203,'suraj','surat');
-insert into costumer values(204,'mohit','nagpur');
-insert into costumer values(205,'shubham','surat');
-insert into costumer values(206,'ritesh','banglore');
-insert into costumer values(207,'mayur','delhi');
-insert into costumer values(208,'vivek','surat');
-insert into costumer values(209,'amit','surat');
-insert into costumer values(210,'raj','surat');
-select * from costumer;
+
+drop table products3
+CREATE TABLE products3(
+    product_id INT IDENTITY PRIMARY KEY,
+    product_name VARCHAR(255) NOT NULL,
+    unit_price DEC(10,2) NOT NULL
+);
+alter table products3
+add constraint positive_price check (unit_price>0);
+alter table products3
+nocheck constraint positive_price;
+insert into products3 values('mouse',0)
+insert into products3 values('mouse',25)
+select * from products3
+
