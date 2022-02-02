@@ -1,15 +1,16 @@
-
-drop table products3
-CREATE TABLE products3(
-    product_id INT IDENTITY PRIMARY KEY,
-    product_name VARCHAR(255) NOT NULL,
-    unit_price DEC(10,2) NOT NULL
+create table winner(
+year int,subject varchar(50),winner varchar(50),country varchar(50),
+category varchar(50)
 );
-alter table products3
-add constraint positive_price check (unit_price>0);
-insert into products3 values('mouse',2)
-insert into products3 values('mouse',25)
-select * from products3
-alter table products3
-drop constraint positive_price;
-insert into products3 values('mouse',0)
+insert into winner values(1970,'Physics','Hannes Alfven','Sweden','Scientist');
+insert into winner values(1970,'Physics','Louis Neel','France','Scientist');
+insert into winner values(1970,'Chemistry','Luis Federico Leloir','France','Scientist');
+insert into winner values(1970,'Physiology','Ulf von Euler','Sweden','Scientist');
+insert into winner values(1970,'Physiology','Bernard Katz','Germany','Scientist');
+insert into winner values(1970,'Literature','Aleksandr Solzhenitsyn','Russia','Linguist');
+insert into winner values(1970,'Economics','Paul Samuelson','Usa','Economist');
+insert into winner values(1971,'Economics','Paul Samuelson','Usa','Economist');
+insert into winner values(1971,'Physiology','Bernard Katz','Germany','Scientist');
+
+
+select year,subject,winner from winner where year=1971;
