@@ -1,8 +1,13 @@
-CREATE TABLE test_products(
-    product_id INT IDENTITY PRIMARY KEY,
-    product_name VARCHAR(255) NOT NULL,
-    unit_price DEC(10,2),
-    discounted_price DEC(10,2),
-    CHECK(unit_price > 0),
-    CHECK(discounted_price > 0 AND discounted_price > unit_price)
-	);
+create table salesman
+(
+salesman_id int primary key,
+name varchar(50),city varchar(50),commision dec(10,2)
+);
+insert into salesman values (5001,'James Hoogs','New York',0.15); 
+insert into salesman values (5002,'Nail Knite ','Paris',0.13);
+insert into salesman values (5005,'Pit Alex','London',0.11);
+insert into salesman values (5006,'Mc Lyon','Paris',0.14);
+insert into salesman values (5007,'Paul Adam','Rome',0.13);
+insert into salesman values (5003,'Lauson','San Jose',0.12);
+
+select name,city  from salesman where city='paris';
