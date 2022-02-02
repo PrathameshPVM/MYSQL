@@ -1,11 +1,16 @@
-CREATE TABLE persons(
-    person_id INT IDENTITY PRIMARY KEY,
-    first_name VARCHAR(255) NOT NULL,
-    last_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) UNIQUE
+create table winner(
+year int,subject varchar(50),winner varchar(50),country varchar(50),
+category varchar(50)
 );
-insert into persons values('amit','kumar','a@gmail.com')
-insert into persons values('raju','shree','r@gmail.com')
-insert into persons values('amit','kumar','a@gm2ail.com')
+insert into winner values(1970,'Physics','Hannes Alfven','Sweden','Scientist');
+insert into winner values(1970,'Physics','Louis Neel','France','Scientist');
+insert into winner values(1970,'Chemistry','Luis Federico Leloir','France','Scientist');
+insert into winner values(1970,'Physiology','Ulf von Euler','Sweden','Scientist');
+insert into winner values(1970,'Physiology','Bernard Katz','Germany','Scientist');
+insert into winner values(1970,'Literature','Aleksandr Solzhenitsyn','Russia','Linguist');
+insert into winner values(1970,'Economics','Paul Samuelson','Usa','Economist');
+insert into winner values(1971,'Economics','Paul Samuelson','Usa','Economist');
+insert into winner values(1971,'Physiology','Bernard Katz','Germany','Scientist');
+insert into winner values(1971,'Physiology','Dennis Gabor','Germany','Scientist');
 
-select * from persons
+select winner from winner where subject='physics' and year >= 1950;
