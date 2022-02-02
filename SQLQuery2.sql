@@ -1,9 +1,12 @@
-
-create table products
+create table salesman
 (
-product_id int identity primary key,
-product_name varchar(255) not null,
-unit_price dec(10,2) constraint positive_price check(unit_price>0)
+salesman_id int primary key,
+name varchar(50),city varchar(50),commision dec(10,2)
 );
-insert into products values('bikes',125)
-select * from products
+insert into salesman values (5001,'James Hoogs','New York',0.15); 
+insert into salesman values (5002,'Nail Knite ','Paris',0.13);
+insert into salesman values (5005,'Pit Alex','London',0.11);
+insert into salesman values (5006,'Mc Lyon','Paris',0.14);
+insert into salesman values (5007,'Paul Adam','Rome',0.13);
+insert into salesman values (5003,'Lauson','San Jose',0.12);
+select commision from salesman
