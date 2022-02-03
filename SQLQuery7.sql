@@ -1,13 +1,35 @@
-create table order1(
-ord_no int primary key,purch_amt dec(10,2),ord_date date,
-customer_id int,salesman_id int
-);
-insert into order1 values(70001,150.5,'2012-10-05',3005,5002);
-insert into order1 values(70009,270.65,'2012-09-10',3001,5005);
-insert into order1 values(70002,65.26,'2012-10-05',3002,5001);
-insert into order1 values(70004,110.5,'2012-08-17',3009,5001);
-insert into order1 values(70007,948.5,'2012-09-10',3005,5003);
-insert into order1 values(70005,2400.6,'2012-07-27',3007,5001);
-insert into order1 values(70008,5760,'2012-09-10',3002,5001);
-select * from order1;
-select ord_no,ord_date,purch_amt from order1 where salesman_id=5001;
+CREATE TABLE Fee (   
+      admission_no varchar(45) NOT NULL,  
+      course varchar(45) NOT NULL,      
+      amount_paid int,    
+    );  
+	CREATE TABLE Students (      
+      id int PRIMARY KEY IDENTITY,     
+      admission_no1 varchar(45) NOT NULL,  
+      first_name1 varchar(45) NOT NULL,      
+      last_name1 varchar(45) NOT NULL,  
+      age1 int,  
+      city varchar(25) NOT NULL      
+    );    
+	INSERT INTO Students (admission_no1, first_name1, last_name1, age1, city)       
+    VALUES (3354,'Luisa', 'Evans', 13, 'Texas'),       
+    (2135, 'Paul', 'Ward', 15, 'Alaska'),       
+    (4321, 'Peter', 'Bennett', 14, 'California'),    
+    (4213,'Carlos', 'Patterson', 17, 'New York'),       
+    (5112, 'Rose', 'Huges', 16, 'Florida'),  
+    (6113, 'Marielia', 'Simmons', 15, 'Arizona'),    
+    (7555,'Antonio', 'Butler', 14, 'New York'),       
+    (8345, 'Diego', 'Cox', 13, 'California');  
+	INSERT INTO Fee (admission_no, course, amount_paid)       
+    VALUES (3354,'Java', 20000),       
+    (7555, 'Android', 22000),       
+    (4321, 'Python', 18000),    
+    (8345,'SQL', 15000),       
+    (5112, 'Machine Learning', 30000); 
+	select * from Students
+	select * from fee
+
+	select Students.admission_no1,Students.first_name1,Students.last_name1,
+	fee.course,fee.amount_paid
+	from Students right outer join fee 
+	on Students.admission_no1=Fee.admission_no;
