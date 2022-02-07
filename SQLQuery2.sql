@@ -1,13 +1,21 @@
-select * from customer
+select * from product
+create view px
+as select * from product
+where price>600
 
-alter table customer 
-add state varchar(50);
+select * from px;
 
 
+create view p2
+as select id,name from product
+where price>600
+select * from p2;
 
-select * from customer
+select * from customer;
+select * from order1;
 
-select s1.cust_name,s2.state,s2.city 
-from customer s1,customer s2 
-where s1.customer_id<>s2.customer_id and s1.city=s2.city
-order by s2.city;
+create view p3a
+as select customer.customer_id,customer.cust_name,order1.ord_date
+from customer inner join order1 on customer.cust_name=order1.customer_id
+
+select * from p3a;
