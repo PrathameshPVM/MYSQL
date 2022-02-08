@@ -1,5 +1,10 @@
-select * from customer
-select * from order1
 
-select customer.customer_id,customer.cust_name,order1.customer_id,order1.purch_amt from 
-customer cross join order1 ;
+create procedure prod3(@minprice as decimal)
+as begin 
+select * from product
+where price > @minprice
+order by price
+end;
+
+exec prod3 120;
+exec prod3 220;
