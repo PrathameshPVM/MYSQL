@@ -1,16 +1,9 @@
-create table winner(
-year int,subject varchar(50),winner varchar(50),country varchar(50),
-category varchar(50)
-);
-insert into winner values(1970,'Physics','Hannes Alfven','Sweden','Scientist');
-insert into winner values(1970,'Physics','Louis Neel','France','Scientist');
-insert into winner values(1970,'Chemistry','Luis Federico Leloir','France','Scientist');
-insert into winner values(1970,'Physiology','Ulf von Euler','Sweden','Scientist');
-insert into winner values(1970,'Physiology','Bernard Katz','Germany','Scientist');
-insert into winner values(1970,'Literature','Aleksandr Solzhenitsyn','Russia','Linguist');
-insert into winner values(1970,'Economics','Paul Samuelson','Usa','Economist');
-insert into winner values(1971,'Economics','Paul Samuelson','Usa','Economist');
-insert into winner values(1971,'Physiology','Bernard Katz','Germany','Scientist');
-insert into winner values(1971,'Physiology','Dennis Gabor','Germany','Scientist');
-
-select year,subject from winner where winner='Dennis Gabor';
+create proc prod10(@minp as decimal=100,@maxp as decimal=1000,@pn as varchar(max))
+as
+begin
+select * from product
+where price >@minp and price<@maxp and name like '%' + @pn+ '%'
+order by name;
+ end;
+ exec prod10 @minp=120,@maxp=500,@pn='board'
+exec prod10 @minp=230,@pn='key'
